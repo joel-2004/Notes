@@ -1,0 +1,12 @@
+//to create 
+db.createCollection("Players")
+//show database
+show dbs
+//drop database
+ db.dropDatabase()
+ //to use a database
+ use footballers //if it is not created it will create on its own
+
+ //insert
+ db.player.insertOne({name:"Joel",jersey_no:10,country:"Brazil"})
+ //if player is not created it will create on its own
