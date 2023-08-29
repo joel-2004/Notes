@@ -1,0 +1,13 @@
+// console.log("helo");
+// let name = prompt("name?");
+
+// console.log(name);
+
+function sub() {
+    // let ans = document.forms[0].name.value;
+    // alert(ans);
+    // document.getElementById("nameLabel").innerHTML = ans;
+    let a = document.getElementById("name").value;
+    alert(a);
+    document.getElementById("nameLabel").innerText = a;
+}
