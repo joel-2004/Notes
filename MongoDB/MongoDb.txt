@@ -1,12 +1,71 @@
 //to create 
 db.createCollection("Players")
+
 //show database
 show dbs
+
 //drop database
  db.dropDatabase()
- //to use a database
+
+//to use a database
  use footballers //if it is not created it will create on its own
 
- //insert
- db.player.insertOne({name:"Joel",jersey_no:10,country:"Brazil"})
- //if player is not created it will create on its own
+//insert one
+db.player.insertOne({name:"Joel",jersey_no:10,country:"Brazil"})
+if player is not created it will create on its own 
+
+//display the database
+db.player.find()
+
+//insert many
+db.player.insertMany([{name:"NEYMAR",jersey_no:"10"},{name:"MESSI",jersey_no:10}])
+
+//datatypes
+  Strings can be in double or single quotes, strings can contain space  name:"joel"
+  Integer jersey_no:10
+  double goalsPerMatch:3.33
+  boolean goalKeeper:false
+  date joinDate:new Date() // if no paramter inside date function the current date will be included     
+  null endDate:null basically no value
+  arrays position:["CF","LF"]
+  nested document {address:{
+    streetName:"demo",
+    city:"kodaikanal",
+    pincode:624101
+  }}
+
+//sorting
+db.player.find().sort({name:1})// to print in alphabetical order use 1
+to print in reverse use -1
+same for numbers also 
+ 
+
+//limiting
+db.player.find().limit(2)
+no of documents we want to return as argument
+
+//combo of limit() and sort()
+db.player.find().sort({name:1}).limit(1)
+
+//find
+db.player.find({query},{projection})
+db.player.find({name:"Joel"}) //only prints the name with "Joel"
+db.player.find({name:"Joel",jersey_no:10})
+
+the second argument is the projection in find
+db.player.find({},{name:true}) // prints only the name of all datas
+db.player.find({jersey_no:10},{name:true})//prints the players with jersey_no 10
+can use name:1 for true as well
+mongoDb by default gives id, if we dont need it then  db.player.find({jersey_no:10},{_id:false,name:true})  
+
+
+//update
+can updateOne or updateMany
+takes in two paramters db.player.updateOne({filter},{update})
+$set:{} in the update paramter to change value
+db.player.updateOne({name:"Joel"},{$set:{jersey_no:7}})
+if the filed aldready exists it will update, else it will create
+Better to update a object by id since they are unique
+to remove a field we use $unset:{} db.player.updateOne({name:"Joel"},{$unset:{jersey_no:7}})
+
+
