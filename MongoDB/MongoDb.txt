@@ -61,6 +61,7 @@ mongoDb by default gives id, if we dont need it then  db.player.find({jersey_no:
 
 //update
 can updateOne or updateMany
+//updateOne
 takes in two paramters db.player.updateOne({filter},{update})
 $set:{} in the update paramter to change value
 db.player.updateOne({name:"Joel"},{$set:{jersey_no:7}})
@@ -68,4 +69,43 @@ if the filed aldready exists it will update, else it will create
 Better to update a object by id since they are unique
 to remove a field we use $unset:{} db.player.updateOne({name:"Joel"},{$unset:{jersey_no:7}})
 
+//updateMany
+db.player.updateMany({},{$set:{position:"forward"}}) 
+since first paramter is empty it will update all the objects
+db.player.updateMany({jersey_no:10},{$set:{jersey_no:11}})
+we can give a filter like updateOne in first argument
+db.player.updateMany({jersey_no:{$exists:false}},{$set:{jersey_no:10}})
+only updated whereever the jersey_no was false or not present
 
+//delete
+similar to find with one paramter
+//deleteOne
+db.player.deleteOne({name:"Joel"})
+
+//deleteMany
+db.player.deleteMany({position:"forward"})
+delete every object that has position as forward
+
+db.player.deleteMany({jersey_no:{$exists:false}})
+//if any object does not have a jersey_no attribute it will delete
+
+//comparision operators
+$ne means not equal
+db.player.find({name:{$ne:"Joel"}})
+find every object that does not have the name attribute as Joel
+
+$gt greater than
+db.player.find({jersey_no:{$gt:7}})
+
+$lt means lesser than
+db.player.find({jersey_no:{$lt:10}})
+
+$lte lesser than or equal to
+db.player.find({jersey_no:{$lte:10}})
+
+$gte greater than or equal to
+db.player.find({jersey_no:{$gte:10}})
+
+//between a range
+greater than 7 and lesser than or equal to 10
+db.player.find({jersey_no:{$gt:7,$lte:10}})
