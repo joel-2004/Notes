@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "64ed488196ffe98e3f575c76"
+  },
+  "name": "Joel",
+  "position": "forward",
+  "jersey_no": 10
+},
+{
+  "_id": {
+    "$oid": "64ede035a77721bfbf2c3c0a"
+  },
+  "name": "NEYMAR",
+  "position": "LW",
+  "jersey_no": 10
+},
+{
+  "_id": {
+    "$oid": "64ede035a77721bfbf2c3c0b"
+  },
+  "name": "MESSI",
+  "jersey_no": 10,
+  "position": "forward"
+},
+{
+  "_id": {
+    "$oid": "64ede0e13ebf77b692e4e7fd"
+  },
+  "name": "Ronaldo",
+  "jersey_no": 10,
+  "position": "forward"
+},
+{
+  "_id": {
+    "$oid": "64ede515a77721bfbf2c3c0c"
+  },
+  "date": {
+    "$date": "2023-08-29T12:31:17.045Z"
+  },
+  "position": "forward",
+  "jersey_no": 10
+}]
