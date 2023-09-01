@@ -119,3 +119,19 @@ not in
 db.player.find({name:{$nin:["Joel","NEYMAR"]}})
 will print Details of objects except joel, NEYMAR
 
+//logical operators
+works only when both conditions are true
+$and:[{},{}]
+db.player.find({$or:[{name:"Joel"},{jersey_no:{$lte:10}}]})
+
+$or:[{},{}]
+either one has to be true
+db.player.find({$or:[{name:"Joel"},{jersey_no:{$lte:7}}]})
+
+//$nor:[{},{}]
+both need to be false to print
+db.player.find({$nor:[{name:"Joel"},{jersey_no:{$lte:7}}]})
+
+//$not
+prints the opposite
+ db.player.find({jersey_no:{$not:{$gte:10}}})
