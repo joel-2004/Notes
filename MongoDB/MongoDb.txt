@@ -109,3 +109,13 @@ db.player.find({jersey_no:{$gte:10}})
 //between a range
 greater than 7 and lesser than or equal to 10
 db.player.find({jersey_no:{$gt:7,$lte:10}})
+
+//$in 
+db.player.find({name:{$in:["Joel","NEYMAR"]}})
+will print the values if they are from the array
+
+//$nin
+not in
+db.player.find({name:{$nin:["Joel","NEYMAR"]}})
+will print Details of objects except joel, NEYMAR
+
