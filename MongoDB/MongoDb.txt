@@ -135,3 +135,13 @@ db.player.find({$nor:[{name:"Joel"},{jersey_no:{$lte:7}}]})
 //$not
 prints the opposite
  db.player.find({jersey_no:{$not:{$gte:10}}})
+
+ //indexes
+ we use linear search by default to find an object
+ to make search faster we use index
+ db.player.createIndex({name:1}) 
+ 1 for ascending, -1 for descending
+ db.player.getIndexes() // show the indexes, id index is created by default
+ db.player.dropIndex("name_1") //to drop index name_1 is the name of the index
+ //the index uses B-tree, it has a disadvantage, though it reduces the speed of search time, it affects the time taken
+ for doing the CRUD operations. So,we have to use indexes wisely 
