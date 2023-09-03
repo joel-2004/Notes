@@ -18,6 +18,8 @@ const getText = (path) => {
 const start = async () => {
     try {
         const first = await getText("./content/textFile.txt");
+        const second = await getText("./content/newFile.txt")
+        console.log(first);
     } catch (error) {
         console.log(error);
     }
