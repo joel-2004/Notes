@@ -72,4 +72,36 @@ update players set id=null where first_name="Cristiano";
 
 //delete
 delete from players where first_name="Cristiano";
-withou where the whole table would be deleted
+without where the whole table would be deleted
+
+//rollback,commit
+by default our sql is in autocommit, the problem is that if by mistake we end up deleting or updating the db, we will 
+not be able to go back
+so we use breakpoints to undo 
+set autocommit=off;//to turn off auto commit
+
+commit;//i commited meaning a breakpoint or savepoint
+delete from players;
+
+rollback;//so after deletion when i use rollback i am able to go back to the last savepoint
+select * from players;
+
+//Date & Time
+creating a demo table
+
+create table dateTimeTest(
+my_date date,
+my_time time,
+my_date_time datetime);
+ insert
+insert into datetimetest values(current_date(),current_time(),now());
+using in-build functions
+date format:YYYY-MM-DD
+time format(24 hrs):HH:MM:SS
+current_date()+1 =>tomorrow's date 
+current_date()-1 =>yesterday's date
+can do same with time, will reduce or increase seconds
+
+//unique
+alter table players add constraint unique(id);
+now the id should be unique
