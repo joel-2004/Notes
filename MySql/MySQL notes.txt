@@ -1,0 +1,66 @@
+create database mydb;//to create a db
+use mydb;//to use that db
+drop database mydb;//drop database
+
+//making databse read only
+alter database mydb READ only =1;
+1 is true and 0 is false
+we will not be able to alter it in this mode
+
+//creating table
+create table player(
+id int,
+first_name varchar(30),
+last_name varchar(30),
+salary decimal(5,2), // 5 is the number of digits before . and 2 is the precision(digits after dot)
+hire_date date);
+
+//rename a table
+rename table player to players;
+rename table <old_name> to <new_name>
+
+//drop table
+drop table players;
+
+//alter table
+alter table players add phone_no varchar(30);  
+//adding new phone number col
+changing the name of a column
+alter table players rename column phone_no to email;
+changing the datatype 
+alter table players modify email varchar(30);
+//move a col after a col (rearranging)
+alter table players modify email varchar(30) after last_name;
+
+use first to move to the first col
+alter table players modify email varchar(30) first;
+
+//drop a column
+alter table players drop email;
+
+//insert
+insert into players values(101,"loknath","joel",250.00,"2022-12-30");
+date format year-month-day YYYY-MM-DD
+
+//multiple inserts
+insert into players values(102,"Neymar","jr",270.00,"2022-6-10"),
+(103,"Lionel","Messi",280.00,"2023-7-23");
+
+//selective columns
+insert into players (id,first_name) values(104,"Cristiano");
+remaining will be null
+
+//select 
+//where
+select * from players where first_name="loknath" and last_name="joel";
+greater than or equal to
+select * from players where salary>=250.00;
+//in date
+select * from players where hire_date<="2023-01-01";
+//not equal to
+select * from players where first_name!="loknath";
+
+//to select from null use is
+select * from players where hire_date is null;
+//is not
+select * from players where hire_date is not null;
