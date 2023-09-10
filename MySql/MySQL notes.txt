@@ -105,3 +105,22 @@ can do same with time, will reduce or increase seconds
 //unique
 alter table players add constraint unique(id);
 now the id should be unique
+
+//not null 
+alter table players modify id int not null;
+now the id cannot be null
+
+//check
+add check
+alter table players add constraint chk_hourly check(salary>=20.00);
+makes sure that the salary can be only greater than 20.00
+delete check
+alter table players drop check chk_hourly;
+
+//default
+alter table players alter salary set default 0;
+insert into players(id,first_name,last_name,hire_date) value(106,"Jude","Bellingam","2022-4-6");
+setting a default value
+Jude Bellingam's salary is automatically set to 0
+It will be usefull in a ATM to keep track of transaction time, which can be set by default to NOW()
+
