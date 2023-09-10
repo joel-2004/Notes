@@ -31,10 +31,8 @@ changing the datatype
 alter table players modify email varchar(30);
 //move a col after a col (rearranging)
 alter table players modify email varchar(30) after last_name;
-
-use first to move to the first col
+//use first to move to the first col
 alter table players modify email varchar(30) first;
-
 //drop a column
 alter table players drop email;
 
@@ -59,8 +57,19 @@ select * from players where salary>=250.00;
 select * from players where hire_date<="2023-01-01";
 //not equal to
 select * from players where first_name!="loknath";
-
 //to select from null use is
 select * from players where hire_date is null;
 //is not
 select * from players where hire_date is not null;
+
+//update
+update players set last_name="Ronaldo" where first_name="Cristiano";
+//updating two values at once
+update players set salary=290.00,hire_date="2022-06-10" where first_name="Cristiano";
+//updating a value as null
+update players set id=null where first_name="Cristiano";
+//if we dont use where then the whole column would be updated
+
+//delete
+delete from players where first_name="Cristiano";
+withou where the whole table would be deleted
