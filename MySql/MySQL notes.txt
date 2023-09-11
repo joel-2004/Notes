@@ -105,6 +105,11 @@ can do same with time, will reduce or increase seconds
 //unique
 alter table players add constraint unique(id);
 now the id should be unique
+create table players(
+id int unique,
+name varchar(30),
+salary decimal(5,2) default 0.00;
+);
 
 //not null 
 alter table players modify id int not null;
@@ -123,4 +128,20 @@ insert into players(id,first_name,last_name,hire_date) value(106,"Jude","Belling
 setting a default value
 Jude Bellingam's salary is automatically set to 0
 It will be usefull in a ATM to keep track of transaction time, which can be set by default to NOW()
+//better to do these while creating the table itself
+create table players(
+id int unique,
+name varchar(30),
+salary decimal(5,2) default 0.00;
+);
+
+//primary key => unique + notNull
+a table can have only one primary key
+create table prim(
+id int primary key,
+name varchar(30)
+);
+//for an existing table
+alter table players add constraint primary key(id);
+
 
