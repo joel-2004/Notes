@@ -1,25 +1,15 @@
 const express = require("express");
 const app = express();
-const { products } = require("../NodeJS/content/product")
+// req =>middleware=>response
+//a middleware does something inbetween the request and response
+
 app.get("/", (req, res) => {
-    // res.json(products)
-    res.send(`<h1>Home Page</h1>  <a href="/api/products">Link</a>`)
+    res.end("Home");
 })
 
-app.get("/api/products", (req, res) => {
-    const newProduct = products.map((p) => {
-        const { id, name, image } = p;
-        return { id, name, image };
-    })
-    res.send(newProduct);
+app.get("/about", (req, res) => {
+    res.end("about");
 })
-
-app.get("/api/products/1", (req, res) => {
-    const newProduct = products.find((p) => p.id == 1);
-
-    res.send(newProduct);
-})
-
-app.listen(5000, () => {
-    console.log("Listening 5000");
+app.listen((5000), () => {
+    console.log("Listening at 5000");
 })
