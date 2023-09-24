@@ -1,28 +1,15 @@
 const express = require("express");
 const app = express();
-let { people } = require("./content/product");
+let { people } = require("../content/product");
 //setting static for post method
-app.use(express.static("./content/methods-public"));
+app.use(express.static("../content/methods-public"));
 
 //HTTTP methods
 app.get("/api/people", (req, res) => {//GET - reading data
     res.status(200).json({ success: true, data: people });
 })
 
-app.post("/login", (req, res) => {
-    console.log(req.body);
-    const { name } = req.body;
-    console.log(name);
-    //res.send("Posted");
-
-    if (name) {//instead of name === ""
-        return res.status(200).send(`name ${name}`);
-    }
-
-    return res.status(404).send("Type a value");
-})
-
-
+//POST - insert data
 app.use(express.json());//to handle data to json format i.e parse JSON
 
 //JS example - SEE THIS AFTER FORM EXAMPLE
@@ -44,11 +31,22 @@ Express body-parser is an npm library used to process data sent through an HTTP 
  {extended:false} allows to choose between parsing the URL-encoded data with the querystring library
 (when false) or the qs library (when true).
  */
+app.post("/login", (req, res) => {
+    console.log(req.body);
+    const { name } = req.body;
+    console.log(name);
+    //res.send("Posted");
 
+    if (name) {//instead of name === ""
+        return res.status(200).send(`name ${name}`);
+    }
+
+    return res.status(404).send("Type a value");
+})
 
 //Using POSTMAN for API
 
-app.post("/api/people/postman", (req, res) => {
+app.post("/api/postman/people", (req, res) => {
     const { name } = req.body;
 
     if (!name) {
