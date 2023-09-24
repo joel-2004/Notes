@@ -19,8 +19,8 @@ app.post("/api/people", (req, res) => {
     if (!name) {
         res.status(400).json({ success: false, msg: "please provide some data" });
     }
-
-    res.status(201).json({ success: true, person: name });//axios in html file gives back all the data, we are adding name with it
+    else
+        res.status(201).json({ success: true, person: name });//axios in html file gives back all the data, we are adding name with it
 
 })
 
@@ -42,8 +42,54 @@ app.post("/login", (req, res) => {
     }
 
     return res.status(404).send("Type a value");
+})
+
+//Using POSTMAN for API
+
+app.post("/api/postman/people", (req, res) => {
+    const { name } = req.body;
+
+    if (!name) {
+        return res.status(400).json({ success: false, msg: "please enter a value" });
+    }
+    return res.status(200).json({ success: true, data: [...people, name] });
+})
+
+//PUT method - update data
+app.put("/api/people/:id", (req, res) => {
+    const { id } = req.params;
+    const { name } = req.body;
+    //console.log(id + " " + name);
+    //res.json({ name: name, id: id })
+    const person = people.find((p) => p.id === Number(id));
+    if (!person) {
+        return res.status(404).json({ success: false, msg: `no person with ${id}` });
+    }
+    //updating the name ,using map to iterate throught the array
+    const newPeople = people.map((p) => {
+        if (p.id === Number(id)) {
+            p.name = name;
+        }
+        return p;
+    })
+    res.status(200).json({ success: true, data: newPeople });
+})
 
 
+//DELETE method
+//there can be a same url for different methods,it sends a different request for different methods
+app.delete("/api/people/:id", (req, res) => {
+    const { id } = req.params;
+
+    const person = people.find((p) => p.id === Number(id));
+    if (!person) {
+        return res.status(404).json({ success: false, msg: `no person with ${id}` });
+    }
+    const newPeople = people.filter((p) => {
+        return p.id !== Number(id);
+    })
+
+    res.status(200).json({ success: true, data: newPeople });
 })
 app.listen(5000, () => {
     console.log("Listening at 5000");
