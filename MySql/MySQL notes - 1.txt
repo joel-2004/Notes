@@ -144,7 +144,14 @@ id int primary key auto_increment,
 name varchar(30)
 );
 
-
+//primary key => unique + notNull
+a table can have only one primary key
+create table prim(
+id int primary key,
+name varchar(30)
+);
+//for an existing table
+alter table players add constraint primary key(id);
 
 
 
