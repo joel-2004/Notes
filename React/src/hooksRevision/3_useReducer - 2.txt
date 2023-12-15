@@ -1,0 +1,56 @@
+usereducer - 2 :
+
+
+
+WRITING A REDUCER :
+
+writing a reducer is same as writing the reducer in redux .
+we have a object which is immutable and we perform the operation
+
+  const initialState = 0;
+  const reducer = (state , action )=>{
+switch(action){
+case 'increment' : return state + 1;
+case 'decrement' : return state - 1;
+case 'reset' : return initialState;
+default : return state ;
+
+}
+};
+
+USING USEREDUCER :
+
+const [count , setCount] = useReducer(reducer , initialState);
+
+call the setCount function with an argument. The argument may be increment , decrement , reset .
+
+SAMPLE CODE :
+
+import React, { useReducer } from "react";
+
+function ReducerDemo() {
+  let initialState = 0;
+  const reducer = (state, action) => {
+    switch (action) {
+      case "increment":
+        return state + 1;
+      case "decrement":
+        return state - 1;
+      case "reset":
+        return initialState;
+      default:
+        return state;
+    }
+  };
+  const [count, setCount] = useReducer(reducer, initialState);
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={() => setCount("increment")}>inc</button>
+      <button onClick={() => setCount("decrement")}>dec</button>
+      <button onClick={() => setCount("reset")}>reset</button>
+    </div>
+  );
+}
+
+export default ReducerDemo;

@@ -1,0 +1,55 @@
+UseReducer :
+
+useReducer is a hook whch is ued for state management.
+
+useState is build using useReducer hook.
+
+Both hooks are used to manage the state of the component.
+
+There is no specific scenario in which we can use useState and useReducer.
+
+It is related to reducers.
+
+Array.reduce() :
+
+reduce method in array is one of the powerful method which process the data in the array and returns a single value.
+
+reduce method accepts two parameters.One is a callback function which we call  as reducer and another one is initial value.The result of the reducer callback is sum with initial value.
+
+   Example :
+let array = [1 , 2 , 3 , 4]
+const reducer = (accumulator , currvalue) => accumulator + currValue ;
+let sum = array.reduce(reducer); // expected output 10
+let sum1 = array.reduce(reducer , 10 ); // expected output 20  
+
+
+  Working :
+
+Result will be stored in accumulator
+itr = 0 , accumulator = 0 , currvalue = 1 , after addition accumulator = 1 .
+itr = 1 , accumulator = 1 , currvalue = 2 , after addition accumulator = 3 .
+itr = 2 , accumulator = 3 , currvalue = 3 , after addition accumulator = 6 .
+itr = 3 , accumulator = 6 , currvalue = 4 , after addition accumulator = 10 .
+
+The value at accumulator is returned. that is 10.
+
+
+ Array.reduce()  VS  useReducer()
+
+ Array.reduce() :
+
+Accepts two params a callback function and a initial value. arrayName.reduce(reducer , initialvalue);
+
+reducer  returns a single value from reducer method.parameter for reducer ----> accumulator , currValue.
+
+The return value of the reduce() method is single value.
+
+useReducer()    :
+
+Accepts two params a callback function and a initial value. useReducer(reducer , initialState);
+
+reducer function returns a new state .parameter for reducer ----> currentState , action.
+
+The return value of useReducer() is newState and dispatch.
+
+dispatch is a method used to specify the action.
