@@ -53,3 +53,6 @@ reducer function returns a new state .parameter for reducer ----> currentState ,
 The return value of useReducer() is newState and dispatch.
 
 dispatch is a method used to specify the action.
+
+
+UseReducer is basically a hook that helps to change the state of a component/
