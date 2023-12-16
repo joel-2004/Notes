@@ -54,3 +54,48 @@ function ReducerDemo() {
 }
 
 export default ReducerDemo;
+
+
+Data Fetch using useContext and useReducer:
+import React from "react";
+import { useReducer, useEffect } from "react";
+import axios from "axios";
+const initialState = {
+  loading: true,
+  error: "",
+  post: {},
+};
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "fetch_success":
+      return { loading: false, error: "", post: action.payload };
+    case "fetch_error":
+      return {
+        loading: true,
+        error: "Error while fetching the data",
+        post: {},
+      };
+    default:
+      return state;
+  }
+};
+function DataFetchingReducer() {
+  const [user, dispatch] = useReducer(reducer, initialState);
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts/1")
+      .then((fetchUser) =>
+        dispatch({ type: "fetch_success", payload: fetchUser.data })
+      )
+      .catch((err) => {
+        dispatch({ type: "fetch_error" });
+      });
+  });
+  return (
+    <>
+      <h1>{user.loading ? "loading ......" : user.post.title} </h1>
+    </>
+  );
+}
+
+export default DataFetchingReducer;
