@@ -1,0 +1,50 @@
+git:
+It is the version control system, it is the tech used to do version control.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+GitHub: It is an online platform to share,look,contribute.
+There are other platforms to do the same like gitlab,Bitbucket
+
+---------------------------------------------------------------------------------------------------------------------------
+
+useOf git:
+-Maintaining versions
+-Opens Source contribution
+-Hostory of the changes in project(Who made change in what line,at what time)
+
+---------------------------------------------------------------------------------------------------------------------------
+
+commands:
+
+ls - show list
+
+mkdir <directory_name> - Make directory(Folder)
+
+cd <directory_name> - change directory to go to a directory
+
+git init - initialise an empty git repo,then .git would be created
+
+.git - a local repository, because we are using dot it is hidden 
+
+ls -a - to show hidden list as well
+
+touch <file_Name> (touch demo.txt) - creates a file named demo
+
+vi <file_name> (vi demo.txt) - edit the file,like write something in it
+
+cat <file_name> (cat demo.txt) - displays the file with its data	
+
+rm -rf demo.txt - rm(remove) rf(remove file) demo.txt, deletes the file
+
+git status - shows the status of git
+
+git add . - add all the files in the local repo
+
+git add names.txt - add only one file
+
+git commit -m "commit" - commit the changes you have made with a msg, Each commit can be considered as a version
+
+git restore --staged <filename> - to unstage,meaning after we do git add <filename>,if we dont want to commit we can use this
+
+git log - shows entire history(commits) of the project
