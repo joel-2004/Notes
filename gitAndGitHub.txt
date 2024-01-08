@@ -1,21 +1,22 @@
 git:
 It is the version control system, it is the tech used to do version control.
 
----------------------------------------------------------------------------------------------------------------------------
+___________________________________________________________________________________________________________________________
 
 GitHub: It is an online platform to share,look,contribute.
 There are other platforms to do the same like gitlab,Bitbucket
 
----------------------------------------------------------------------------------------------------------------------------
+___________________________________________________________________________________________________________________________
 
 useOf git:
+
 -Maintaining versions
 -Opens Source contribution
 -Hostory of the changes in project(Who made change in what line,at what time)
 
----------------------------------------------------------------------------------------------------------------------------
+___________________________________________________________________________________________________________________________
 
-commands:
+git commands:
 
 ls - show list
 
@@ -32,6 +33,11 @@ ls -a - to show hidden list as well
 touch <file_Name> (touch demo.txt) - creates a file named demo
 
 vi <file_name> (vi demo.txt) - edit the file,like write something in it
+    i - to insert
+    esc - to come out of insert mode
+    :w - save
+    :x - save and quit vi mode
+    :q! - quit vi mode
 
 cat <file_name> (cat demo.txt) - displays the file with its data	
 
@@ -48,3 +54,19 @@ git commit -m "commit" - commit the changes you have made with a msg, Each commi
 git restore --staged <filename> - to unstage,meaning after we do git add <filename>,if we dont want to commit we can use this
 
 git log - shows entire history(commits) of the project
+
+git reset <commit_id(from git log)> - reset to that commit, it remove all commits in between. Those removed commit will be in the unstaged section
+
+git stash - It sends the staged files to a backstage, we can get it back from there if needed.
+
+git stash pop - Getting the top stash and merging with the current staged files
+
+git stash clear - to clear the backstage area
+
+___________________________________________________________________________________________________________________________
+
+GitHub git clone:
+
+git remote add origin https://github.com/joel-2004/LoginForm - This command connects our local git repo to remote repos like gitHub,gitLab etc...
+
+git clone <link> - this command only clones the git repo to local repo
