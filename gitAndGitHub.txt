@@ -65,8 +65,84 @@ git stash clear - to clear the backstage area
 
 ___________________________________________________________________________________________________________________________
 
-GitHub git clone:
+GitHub:
 
 git remote add origin https://github.com/joel-2004/LoginForm - This command connects our local git repo to remote repos like gitHub,gitLab etc...
 
 git clone <link> - this command only clones the git repo to local repo
+
+git push origin master - to push into the master branch
+
+___________________________________________________________________________________________________________________________
+
+Branches in git(master/main):
+
+each commit in a git looks a branch. (It looks like a Directed Acyclic Graph(DAG))
+
+         0    Commit 1
+         |  
+         0    Commit 2
+         |
+master-> 0    Commit 3
+
+It is good to create a new branch when adding a new feature or clearing a bug
+Only the finalised code should be in the main branch, for example in a open source repo like react, if an unfinalised,untested code is given, then all the devs will face issuses.
+ 
+git branch newBranch - to create a new branch
+
+git checkout newBranch- when this command is used a pointer now points to the head of the latest node.
+
+
+         0    Commit 1
+         |  
+         0    Commit 2                                        * - to indicate where the head is pointing to
+         |
+master-> 0 <-newBranch(*)    Commit 3
+
+
+a new Pointer is pointing to the head of our branch.
+
+now if a commit is made only the newBranch would move like:  
+         0    Commit 1
+         |  
+         0    Commit 2
+         |
+master-> 0    Commit 3  
+         |
+         0    Commit 4
+         |
+         0 <-newBranch(*)  Commit 5
+
+Note that the master point did not move 
+
+git checkout main -
+
+                            0    Commit 1
+                            |  
+                            0    Commit 2
+                            |
+                            0    Commit 3  
+                            |
+                            0    Commit 4
+                            |
+                    ------  0 ----------
+                    |                   |
+         master(*)->0 Commit 6          0 <-newBranch  Commit 5
+
+git merge newBranch - to merge the branches 
+
+
+
+                            0    Commit 1
+                            |  
+                            0    Commit 2
+                            |
+                            0    Commit 3  
+                            |
+                            0    Commit 4
+                            |
+                    ------  0 ----------
+                    |                   |
+         master(*)->0 Commit 6          0 <-newBranch  Commit 5
+                    |                   |
+          Commit 7  0___________________|
