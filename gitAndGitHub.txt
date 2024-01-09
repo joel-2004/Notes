@@ -146,3 +146,47 @@ git merge newBranch - to merge the branches
          master(*)->0 Commit 6          0 <-newBranch  Commit 5
                     |                   |
           Commit 7  0___________________|
+
+
+git push origin master - to push to master branch
+
+___________________________________________________________________________________________________________________________
+
+Fork:
+
+Why fork?
+
+To contribute to a project, any random person cannot make changes directly. It would result in chaos.
+So we fork the project which creates a copy of the file in our github account.
+
+To clone a project and get it to our system
+git clone <link> - this command only clones the git repo to local repo
+
+git clone https://github.com/joel-2004/LoginForm
+
+git remote add upstream <link of where we have forked from> - To change the upstream of our git
+
+git push origin myBracnh - to make changes in the forked copy in my account
+
+now to commit to the forked project(The main project) we need to create a pull request
+
+One branch can have only one pull request, after that all the commits will be added
+
+For every different feature or bug fix, it is good to create a new branch.
+Example : in an open source project everyone would be working on different features and different bugs of the same project,
+If we all work on the same branch, it is hard to maintain the code, in case i make a unsatisfied code and someone else 
+makes a satisfied code. They would not be able to add it to the main branch.It causes chaos
+
+when removing a commit by using
+git reset <commit_id>
+git stash
+
+we need to force push because our commit history in the git repo would not be same as local, note that git uses like a 
+chain hashing rechnique for commit_id
+
+git push origin master -f (force push)
+
+___________________________________________________________________________________________________________________________
+NOTE: There is more in Kunal Kushawas video, this much is enough for now 
+
+Link: https://www.youtube.com/watch?v=apGV9Kg7ics&t=2158s
