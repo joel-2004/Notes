@@ -1,3 +1,44 @@
+Types of SQL Commands:
+
+url: https://www.javatpoint.com/dbms-sql-command
+
+DDL - Data Definition Language
+  defines the structure of table
+it includes :
+         create
+         alter
+         drop
+         truncate
+
+DML - Data Manipulation Language
+  change of data
+it includes :
+           insert
+           update
+           delete
+
+DCL - Data Control Language
+ control of data
+it includes :
+            grant
+            revoke
+
+TCL - Trasaction Control Language
+  controls trasaction of data
+it includes :
+          commit
+          rollback
+          savepoint
+
+DQL - Data Query Language
+  used to fetch data
+it includes : 
+           select
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+SQL Queries:
+
 create database mydb;//to create a db
 use mydb;//to use that db
 drop database mydb;//drop database
