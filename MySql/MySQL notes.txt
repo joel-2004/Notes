@@ -144,6 +144,72 @@ id int primary key auto_increment,
 name varchar(30)
 );
 
+---------------------------------------------------------------------------------------------------------------------------------
+
+KEYS
+
+//primary key => unique + notNull
+a table can have only one primary key
+create table prim(
+id int primary key,
+name varchar(30)
+);
+for an existing table
+alter table players add constraint primary key(id);
+
+//candiate key
+all keys other than primary keys can be called as candidate keys
+
+//super key
+subset or combination of keys if they are unique makes it a super key, example emp_id and emp_name combination would
+always be unique
+
+//foreign key 
+a primary key being a column in another table
+example: customer_id as primary key in customers, same custtomer_id being just another column in maybe like transaction table
+This can be used for joins
+
+//alternate key
+a column that could potencially be a primary key, but is not the primary key in the table.
+example : pan_no would be unique for everyone and could be a primary key, but emp_id is the primary key
+alternate key is not mandatory
+
+//composite key
+combination of primary keys that act as one primary key
+
+CREATE TABLE student
+(rollNumber INT, 
+name VARCHAR(30), 
+class VARCHAR(30), 
+section VARCHAR(1), 
+mobile VARCHAR(10),
+PRIMARY KEY (rollNumber, mobile));
+
+see that a combination of rollNumber and mobile number is the primary key for this table.
+
+//artificial key
+adding virtual keys to manage a primary key when it becomes huge.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+//JOINS
+https://www.w3schools.com/sql/sql_join.asp
+
+(INNER) JOIN: Returns records that have matching values in both tables
+LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+
+
+Equii join : We can use = sign
+like : select class.roll_no,placement.cgpa from class,placement where class.roll_no = placement.roll_no;
+                     (or)
+select class.roll_no,placement.cgpa from class join placement on class.roll_no = placement.roll_no;
+
+
+Non -equii joins: We can use comparision operators like > < <= >=
+select class.roll_no,placement.cgpa from class,placement where class.roll_no < placement.roll_no; 
+
 
 
 
