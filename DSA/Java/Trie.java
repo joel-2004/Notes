@@ -1,43 +1,76 @@
-
 public class Trie {
-	static class TreeNode {
-		TreeNode children[] = new TreeNode[26];
-		boolean isLeaf;
-	}
+    // TreeNode obj
+    static class TreeNode {
+        TreeNode children[] = new TreeNode[26];
+        boolean isLeaf;
+    }
 
-	static TreeNode root;
+    // starting node
+    static TreeNode root;
 
-	public static void insert(String s) {
-		int len = s.length();
-		TreeNode curr = root;
-		for (int i = 0; i < len; i++) {
-			if (curr.children[s.charAt(i) - 'a'] == null) {
-				curr.children[s.charAt(i) - 'a'] = new TreeNode();
-			}
-			curr = curr.children[s.charAt(i) - 'a'];// to move to the next pointer
-		}
-		curr.isLeaf = true;
-	}
+    // Insert
+    public static void insert(String s) {
+        TreeNode temp = root;
+        for (int i = 0; i < s.length(); i++) {
+            if (temp.children[s.charAt(i) - 'a'] == null) {
+                temp.children[s.charAt(i) - 'a'] = new TreeNode();
+            }
+            temp = temp.children[s.charAt(i) - 'a'];
 
-	public static boolean search(String s) {
-		int len = s.length();
-		TreeNode curr = root;
-		for (int i = 0; i < len; i++) {
-			if (curr.children[s.charAt(i) - 'a'] == null) {
-				return false;
-			}
-			curr = curr.children[s.charAt(i) - 'a'];
-		}
-		return (curr.isLeaf == true);
-	}
+        }
+        temp.isLeaf = true;
+    }
 
-	public static void main(String[] args) {
-		String s1[] = { "the", "a", "there", "answer", "any",
-				"by", "bye", "their" };
-		root = new TreeNode();
-		for (String s : s1) {
-			insert(s);
-		}
-		System.out.println(search("anwer"));
-	}
+    // Search
+    public static boolean search(String s) {
+        TreeNode temp = root;
+        for (int i = 0; i < s.length(); i++) {
+            if (temp.children[s.charAt(i) - 'a'] == null)
+                return false;
+            temp = temp.children[s.charAt(i) - 'a'];
+        }
+
+        return temp.isLeaf;
+    }
+
+    // Starts With
+    public static boolean startsWith(String s) {
+        TreeNode temp = root;
+        for (int i = 0; i < s.length(); i++) {
+            int c = s.charAt(i) - 'a';
+            if (temp.children[c] == null)
+                return false;
+
+            temp = temp.children[c];
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String str[] = new String[] { "demo", "hello", "world", "new", "temp" };
+        // The starting node
+        root = new TreeNode();
+
+        // Insert
+        for (String s : str) {
+            insert(s);
+        }
+        // Search
+        System.out.println("Search");
+        System.out.println();
+        System.out.println(search("demo"));
+        System.out.println(search("de"));
+        System.out.println(search("news"));
+        System.out.println(search("new"));
+
+        // Starts With
+        System.out.println();
+        System.out.println("Starts With");
+        System.out.println();
+        System.out.println(startsWith("dem"));
+        System.out.println(startsWith("a"));
+        System.out.println(startsWith("new"));
+
+    }
 }
