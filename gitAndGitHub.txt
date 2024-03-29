@@ -12,11 +12,11 @@ useOf git:
 
 -Maintaining versions
 -Opens Source contribution
--Hostory of the changes in project(Who made change in what line,at what time)
+-History of the changes in project(Who made change in what line,at what time)
 
 ___________________________________________________________________________________________________________________________
 
-git commands:
+bash commands:
 
 ls - show list
 
@@ -42,6 +42,9 @@ vi <file_name> (vi demo.txt) - edit the file,like write something in it
 cat <file_name> (cat demo.txt) - displays the file with its data	
 
 rm -rf demo.txt - rm(remove) rf(remove file) demo.txt, deletes the file
+___________________________________________________________________________________________________________________________
+
+git commands:
 
 git status - shows the status of git
 
@@ -187,6 +190,7 @@ chain hashing rechnique for commit_id
 git push origin master -f (force push)
 
 ___________________________________________________________________________________________________________________________
+
 NOTE: There is more in Kunal Kushawas video, this much is enough for now 
 
 Link: https://www.youtube.com/watch?v=apGV9Kg7ics&t=2158s
