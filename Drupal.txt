@@ -1,0 +1,42 @@
+Drupal
+
+yt: https://www.youtube.com/watch?v=NTNWIk3gdFY&list=PLnFNXJ1uZ9dzysIXa9HNMdv4shJ2z_Y81&index=1
+
+It is basically a Content Management System written in PHP.
+We need XAMPP or composer to use drupal.
+X - Cross Platform(can run on various OS)
+A - Apache
+M - MySQL
+P - PHP
+P - Perl
+
+then download drupal and set it inside the XAMPP folder.
+then go to local host and set up things follow the YT video.
+
+Content type:
+Article - for time related content like news,blog.
+Basic Page - a normal basic weba page.
+
+Blocks:
+Blocks are like a component in a web page in React, it is like a navbar, sidebar, header, footer.
+Block Type:
+To create a block type first we need to assign block type. 
+To create a block type go to structure -> block type.
+In block type we can define the structure of the block, attributes that it would have, manage persmission,manage what to display.
+Block:
+To create a block go to content -> blocks
+After the creation of a block type, we create a block and specify the block type and fill the contents.
+Place Block:
+to place a block go to structure -> block layout
+Then we place that block in a position like sidebar, footer etc.
+
+Themes:
+A basic theme is given to us, we can install and use other themes.
+To manipulate themes go to Appearance.
+There is a separate theme for user as well as admin.
+Admin theme is the top most header kind of view that we see that incluedes Back to site, Manage,Shortcuts,Content,Structure,Appearance etc.
+User theme is for the website that we are creating.
+In appearance -> settings we can change favicon, logo image, what to display.
+To add a new theme go to Appearance->List->add theme, them search for drupa themes online and find a compatable one for your version, then add theme with the tar.zip's link.
+Based on the themes settings in appearance -> settings would change possibly giving more options.
+
