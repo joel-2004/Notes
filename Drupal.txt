@@ -53,7 +53,23 @@ links can be enabled and disabled, insted of deleting them if not needed
 
 Shortcuts:
 We can use the star symbol on different menus or sub menus and mark them as shortcuts to reach them faster. 
+
+Contact Form:
+Create a contact form from structure -> contact form.Add the receiptant and modify the required fields as per requirement.
  
+Modules:
+Modules are basically a collection of file that do a task, it is similar to dependencies. We can make custom modules or use other's modules for our page.
+To store contact information from contact us, i installed a module called as "contact storage" and to do that follow similar steps as getting themes.
+To have contack storage i had to get another module called "token".
+Now when i go to structure->contact forms->list, i can see the deatails that i submitted.
+
+Form:
+Install "web form module" and then select all related to web form and install it.
+We can see that it has been added by going to structure, in that we will be able to see Webforms.
+Go to webforms click on add web forms to create a new webform, after this add elements based on the requirements.
+We can give it regex to validate.
+Help - it provides a question mark ? and on hover displays message.
+More - a arrow with more written with it and clicking on it will display message.
 
 
 
