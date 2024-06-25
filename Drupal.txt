@@ -34,9 +34,28 @@ Themes:
 A basic theme is given to us, we can install and use other themes.
 To manipulate themes go to Appearance.
 There is a separate theme for user as well as admin.
-Admin theme is the top most header kind of view that we see that incluedes Back to site, Manage,Shortcuts,Content,Structure,Appearance etc.
+Admin theme is the contents that we see when going to manage, basically everything other than our website. Note that Admin themes doesnt change the top most header part that has manage,shortcuts,admin,back to website
 User theme is for the website that we are creating.
 In appearance -> settings we can change favicon, logo image, what to display.
-To add a new theme go to Appearance->List->add theme, them search for drupa themes online and find a compatable one for your version, then add theme with the tar.zip's link.
+To add a new theme go to Appearance->List->add theme, them search for drupal themes online and find a compatable one for your version, then add theme with the tar.zip's link.
 Based on the themes settings in appearance -> settings would change possibly giving more options.
+
+Menu's:
+Menus are a collection of links (menu items) used to navigate a website.
+Go to Structure -> Menus to acces them, create a menu. sub links can be given py pushing the link slightly to right when ordering them.
+They are considered like blocks and should be placed in block layout.
+levels is menu refer to when we set them as sub link so, /home - level 1
+                                                           /about - level 2
+                                                           /service - level 2
+                                                             /about/firstcompany - level 3
+when i set level to 2 i can see the menu in levels 2 and lower which are basically /about,/service,/about/firstcompany 
+links can be enabled and disabled, insted of deleting them if not needed
+
+Shortcuts:
+We can use the star symbol on different menus or sub menus and mark them as shortcuts to reach them faster. 
+ 
+
+
+
+
 
