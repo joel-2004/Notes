@@ -1,5 +1,6 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
+import React from "react";
 import HomeScreen from "./src/screens/HomeScreen";
 import FirstComponent from "./src/screens/FirstComponent"
 import ListScreen from "./src/screens/ListScreen";
@@ -9,6 +10,10 @@ import NameForm from "./src/screens/NameForm";
 import FetchData from "./src/screens/FetchData";
 import ColorScreen from "./src/screens/ColorScreen";
 import SingleColorScreen from "./src/screens/SingleColorScreen";
+import BoxModel from "./src/screens/BoxModel";
+import FlexBox from "./src/screens/FlexBox";
+
+export const Context = React.createContext();
 
 const navigator = createStackNavigator(
   {
@@ -20,7 +25,10 @@ const navigator = createStackNavigator(
     NameForm: NameForm,
     Fetch: FetchData,
     Color: ColorScreen,
-    SingleColor: SingleColorScreen
+    SingleColor: SingleColorScreen,
+    BoxModel: BoxModel,
+    Flex: FlexBox,
+
   },
   {
     initialRouteName: "Home",
@@ -30,4 +38,14 @@ const navigator = createStackNavigator(
   }
 );
 
-export default createAppContainer(navigator);
+const App = createAppContainer(navigator);
+
+export default () => {
+  return (
+    <Context.Provider value={5}>
+      <App></App>
+    </Context.Provider>
+  );
+}
+
+//export default createAppContainer(navigator);

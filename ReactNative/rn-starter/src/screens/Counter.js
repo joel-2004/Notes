@@ -1,6 +1,8 @@
-import React, { act, useReducer, useState } from 'react'
+import React, { act, useContext, useReducer, useState } from 'react'
 import { Button, Text } from 'react-native'
+import { Context } from '../../App'
 const Counter = () => {
+    const valueFromUseContext = useContext(Context);
     /*
     USING USESTATE
     const [value, setValue] = useState(0);
@@ -30,6 +32,7 @@ const Counter = () => {
             <Text>Count: {state.value}</Text>
             <Button title="Increase" onPress={() => dispatch({ "type": "change_increase", payload: 1 })}></Button>
             <Button title='Decrease' onPress={() => dispatch({ "type": "change_decrease", payload: -1 })}></Button>
+            <Text>From useContext:{valueFromUseContext}</Text>
         </>
     );
 }

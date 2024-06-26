@@ -1,6 +1,6 @@
 import axios, { Axios } from 'axios';
 import React, { useEffect, useState } from 'react'
-import { FlatList, Text } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
 
 const FetchData = () => {
     const [value, setValue] = useState([]);
@@ -10,9 +10,7 @@ const FetchData = () => {
         const fetch = async () => {
             try {
                 const employees = await axios.get("https://jsonplaceholder.typicode.com/todos/1");
-                console.log(employees.data);
-                setValue(employees.data);
-                console.log("Use state " + value)
+                setValue([employees.data]);
             } catch (e) {
                 console.log(e);
             }
@@ -24,7 +22,15 @@ const FetchData = () => {
     return (
         <>
             <Text>Hello</Text>
-            <FlatList data={value} renderItem={({ item }) => console.log(+" items " + item)}></FlatList>
+            <FlatList data={value}
+                keyExtractor={(item) => item.userId}
+                renderItem={({ item }) =>
+                    <View>
+                        <Text>{item.id}</Text>
+                        <Text>{item.title}</Text>
+                        <Text>{item.completed}</Text>
+                    </View>
+                }></FlatList>
 
         </>
     )
