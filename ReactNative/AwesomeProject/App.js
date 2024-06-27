@@ -22,6 +22,7 @@ const App = () => {
     <View style={Styles.loading}>
       {error ? <Error></Error> : <ActivityIndicator size={"large"} color={"blue"} ></ActivityIndicator>}
       {/* //loading screen */}
+      <ActivityIndicator></ActivityIndicator>
     </View>
   );
 
@@ -29,7 +30,6 @@ const App = () => {
 
 const Styles = StyleSheet.create({
   loading: {
-
     justifyContent: "center",
     alignItems: "center",
     flex: 1
