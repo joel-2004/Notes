@@ -14,6 +14,7 @@ import BoxModel from "./src/screens/BoxModel";
 import FlexBox from "./src/screens/FlexBox";
 import MapScreen from "./src/screens/MapScreen";
 import ToDo from "./src/screens/ToDo";
+import Dictionary from "./src/screens/Dictionary";
 
 export const Context = React.createContext();
 
@@ -31,7 +32,8 @@ const navigator = createStackNavigator(
     BoxModel: BoxModel,
     Flex: FlexBox,
     Map: MapScreen,
-    ToDo: ToDo
+    ToDo: ToDo,
+    Dictionary: Dictionary,
   },
   {
     initialRouteName: "Home",

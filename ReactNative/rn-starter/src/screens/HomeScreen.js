@@ -25,6 +25,7 @@ const HomeScreen = (props) => {
       <Button title="Go to Flex Box" onPress={() => props.navigation.navigate("Flex")}></Button>
       <Button title="Go to Map" onPress={() => props.navigation.navigate("Map")}></Button>
       <Button title="Go to ToDo" onPress={() => props.navigation.navigate("ToDo")}></Button>
+      <Button title="Go to Dictionary" onPress={() => props.navigation.navigate("Dictionary")}></Button>
 
     </>
 
