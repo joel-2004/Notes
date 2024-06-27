@@ -3,14 +3,15 @@ import React, { useEffect, useState } from 'react'
 import { Button, Text, StyleSheet, FlatList, TouchableOpacity, View } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler';
 
-const ip = "192.168.1.2";
+const IP = "192.168.1.2";
 const ToDo = () => {
+
     const [list, setList] = useState([]);
     const [data, setData] = useState("");
 
     const add = async () => {
         try {
-            const res = await axios.post("http://" + ip + ":5000/save", { inputValue: data });
+            const res = await axios.post("http://" + IP + ":5000/save", { inputValue: data });
             // console.log(res.data);
             setList([...list, res.data]);
             setData("");
@@ -21,7 +22,7 @@ const ToDo = () => {
 
     const deleteData = async (id) => {
         try {
-            const res = await axios.delete(`http://` + ip + `:5000/todo/delete/${id}`);
+            const res = await axios.delete(`http://` + IP + `:5000/todo/delete/${id}`);
             tempList = list.filter((d) => d._id !== id);
             setList(tempList);
         } catch (e) {
@@ -31,7 +32,7 @@ const ToDo = () => {
 
     const deleteAll = async () => {
         try {
-            const res = await axios.delete("http://" + ip + ":5000/todo/deleteAll");
+            const res = await axios.delete("http://" + IP + ":5000/todo/deleteAll");
             setList([]);
         } catch (error) {
             console.log(error);
@@ -41,7 +42,7 @@ const ToDo = () => {
     useEffect(() => {
         const fetch = async () => {
             try {
-                const res = await axios.get("http://" + ip + ":5000/toDo");
+                const res = await axios.get("http://" + IP + ":5000/toDo");
                 setList(res.data)
             }
             catch (e) {
@@ -55,8 +56,13 @@ const ToDo = () => {
             <View style={style.viewStyleTop}>
                 <TextInput
                     style={style.textInputStyle}
-                    value={data} onChangeText={(i) => setData(i)}
+                    value={data}
+                    onChangeText={(i) => setData(i)}
                     placeholder='Enter Text '
+                    autoCapitalize='none'
+                    autoComplete='none'
+                    autoCorrect={false}
+                    onEndEditing={add}
                 ></TextInput>
             </View>
 
@@ -92,6 +98,9 @@ const ToDo = () => {
 const style = StyleSheet.create({
     textInputStyle: {
         alignItems: "center",
+        borderColor: "skyblue",
+        borderWidth: 1,
+        padding: 5,
     },
     textStyle: {
         marginLeft: 10,
