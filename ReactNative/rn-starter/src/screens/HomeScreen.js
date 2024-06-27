@@ -23,6 +23,8 @@ const HomeScreen = (props) => {
       <Button title="Go to Single Screen" onPress={() => props.navigation.navigate("SingleColor")}></Button>
       <Button title="Go to Box Model" onPress={() => props.navigation.navigate("BoxModel")}></Button>
       <Button title="Go to Flex Box" onPress={() => props.navigation.navigate("Flex")}></Button>
+      <Button title="Go to Map" onPress={() => props.navigation.navigate("Map")}></Button>
+      <Button title="Go to ToDo" onPress={() => props.navigation.navigate("ToDo")}></Button>
 
     </>
 

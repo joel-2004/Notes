@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { StyleSheet, Text, TextInput } from 'react-native'
-import { Context } from '../../App'
+// import { Context } from '../../App'
 const NameForm = () => {
-    const value = useContext(Context);
+    // const value = useContext(Context);
     // console.log(value);
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
@@ -37,7 +37,7 @@ const NameForm = () => {
                     to make IOS not autoCapitalize, autoComplete and autoCorrect
                     */
             }
-            <Text>Value from useContext: {value}</Text>
+            {/* <Text>Value from useContext: {value}</Text> */}
         </>
 
     )

@@ -12,6 +12,8 @@ import ColorScreen from "./src/screens/ColorScreen";
 import SingleColorScreen from "./src/screens/SingleColorScreen";
 import BoxModel from "./src/screens/BoxModel";
 import FlexBox from "./src/screens/FlexBox";
+import MapScreen from "./src/screens/MapScreen";
+import ToDo from "./src/screens/ToDo";
 
 export const Context = React.createContext();
 
@@ -28,7 +30,8 @@ const navigator = createStackNavigator(
     SingleColor: SingleColorScreen,
     BoxModel: BoxModel,
     Flex: FlexBox,
-
+    Map: MapScreen,
+    ToDo: ToDo
   },
   {
     initialRouteName: "Home",
