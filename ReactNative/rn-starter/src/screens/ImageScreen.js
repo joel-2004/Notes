@@ -1,5 +1,5 @@
 import React from 'react'
-import ImageView from '../components/ImageView'
+import { ImageView } from "../components/index"
 import { FlatList } from 'react-native'
 const ImageScreen = () => {
 

@@ -1,6 +1,6 @@
 import React, { act, useReducer, useState } from 'react'
 import { Button, Text, View } from 'react-native'
-import SingleColorReusable from '../components/SingleColorReusable';
+import { SingleColorReusable } from '../components/index';
 const SingleColorScreen = () => {
 
     //USING USEREDUCE
