@@ -26,10 +26,10 @@ const HomeScreen = (props) => {
       <Button title="Go to Map" onPress={() => props.navigation.navigate("Map")}></Button>
       <Button title="Go to ToDo" onPress={() => props.navigation.navigate("ToDo")}></Button>
       <Button title="Go to Dictionary" onPress={() => props.navigation.navigate("Dictionary")}></Button>
-      <Button title="Go to Form" onPress={() => props.navigation.navigate("Form")}></Button>
 
+      <Button title="Go to Calculator" onPress={() => props.navigation.navigate("Calculator")}></Button>
+      <Button title="Go to Rock Paper Scissor" onPress={() => props.navigation.navigate("RockPaperScissor")}></Button>
     </>
-
   );
 };
 

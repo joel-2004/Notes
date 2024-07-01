@@ -12,9 +12,12 @@ import MapScreen from "./MapScreen";
 import NameForm from "./NameForm";
 import SingleColorScreen from "./SingleColorScreen";
 import ToDo from "./ToDo";
-import Form from "./Form";
+
+import Calculator from "./Calculator";
+import RockPaperScissor from "./RockPaperScissor";
 
 export {
     BoxModel, ColorScreen, Counter, Dictionary, FetchData, FirstComponent,
-    FlexBox, HomeScreen, ImageScreen, ListScreen, MapScreen, NameForm, SingleColorScreen, ToDo, Form
+    FlexBox, HomeScreen, ImageScreen, ListScreen, MapScreen, NameForm, SingleColorScreen,
+    ToDo, Calculator, RockPaperScissor
 };
